@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "Roboto Mono", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --font-RobotoMono: "Roboto Mono";
+
+  --font-Tron: "Tron";
+
+  --color-text: #b7e2dd;
+
+  --color-primarylight: #b7e2dd;
+  --color-primary: #02b59f;
+  --color-primarydark: #017562;
+  --color-primaryblack: #022422;
+  --color-secundarylight: #ffd99c;
+  --color-secundary: #ff9f03;
+  --color-secundarydark: #fd7500;
+  --color-background: #1a1d1d;
+  --color-grey: #596d6b;
+  --color-navbar: rgba(7, 74, 63, 0.86);
+  --color-promptShadow: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  --color-backgroundGradiant: linear-gradient(
+    181deg,
+    rgba(2, 111, 98, 1) 0%,
+    rgba(6, 158, 140, 1) 25%,
+    rgba(21, 176, 158, 1) 50%,
+    rgba(6, 158, 140, 1) 75%,
+    rgba(2, 111, 98, 1) 100%
+  );
+
+  --color-backgroundGradiant2: linear-gradient(
+    335deg,
+    rgba(1, 117, 98, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+
+  --font-weight-light: "light";
+  --font-weight-regular: "regular";
+  --font-weight-medium: "medium";
+  --font-weight-semibold: "semibold";
+  --font-weight-bold: "bold";
+
+  --text-h3: 1.625rem;
+  --text-h2: 2.625rem;
+  --text-h1: 4.25rem;
+  --text-h4: 1.25rem;
+  --text-regular: 1.25rem;
+  --text-light: 0.9rem;
+
+  --leading-light: 1.5rem;
+  --leading-h1: 4.5rem;
+  --leading-regular: 1.875rem;
+  --leading-h2: 3rem;
+  --leading-h3: 3rem;
+
+  --container-standard: 90%;
+  --container-landingPage: 80%;
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+
+  background-image: var(--color-backgroundGradiant);
+}
+
+.filterContainer {
+  transition-property: translate;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-primary text-regular font-black;
+}
+
+h1 {
+  @apply text-h1 uppercase;
+}
+
+h2 {
+  @apply text-h2 uppercase;
+}
+
+h3 {
+  @apply text-h3 font-black uppercase;
+}
+
+h4 {
+  @apply text-h4 text-text font-black capitalize;
+}
