@@ -8,7 +8,7 @@ import {
 export default [
   index("./routes/home.tsx"),
   route("explorar", "./routes/explorar.tsx"),
-  route("crear/:promptId?", "./routes/crear.tsx"),
+  route("crear", "./routes/crear.tsx"),
   route("informacion", "./routes/informacion.tsx"),
   route("usuario", "./routes/usuario.tsx"),
 ] satisfies RouteConfig;

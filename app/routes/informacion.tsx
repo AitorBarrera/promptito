@@ -11,7 +11,7 @@ export default function Informacion() {
   return (
     <main className="min-h-[100dvh]">
       <LayoutNavbar />
-      <div>informacion</div>
+      <div>prueba</div>
     </main>
   );
 }
