@@ -137,7 +137,7 @@ export const CreatePromptForm = () => {
 
   return (
     <div className="createPromptForm">
-      <div className="grid grid-cols-8 gap-8 p-16">
+      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-8 lg:p-16">
         <div className="col-span-4 flex flex-col gap-4">
           <TextField
             id="tituloPrompt"
@@ -165,7 +165,7 @@ export const CreatePromptForm = () => {
           <FormLabel component="legend" className="!text-primary">
             LLMs
           </FormLabel>
-          <FormGroup className="!grid grid-cols-2">
+          <FormGroup className="!grid xl:grid-cols-2">
             {llms.map((llm) => (
               <FormControlLabel
                 key={llm.id}
@@ -187,7 +187,7 @@ export const CreatePromptForm = () => {
           <FormLabel component="legend" className="!text-primary">
             Tematicas
           </FormLabel>
-          <FormGroup className="!grid grid-cols-2">
+          <FormGroup className="!grid lg:grid-cols-2">
             {tematicas.map((tematica) => (
               <FormControlLabel
                 key={tematica.id}
@@ -239,7 +239,7 @@ export const CreatePromptForm = () => {
             de crear parametros y configuralos a tu interes.
           </small>
         </div>
-        <div className="col-span-8">
+        <div className="flex flex-col gap-8 text-center lg:col-span-4">
           <Button
             variant="contained"
             color="primary"
@@ -262,10 +262,14 @@ export const CreatePromptForm = () => {
           <form action="" className="col-span-8" onSubmit={handleSetParameters}>
             <hr className="text-primarydark my-6" />
             <h3 className="mb-8">Editar parametros</h3>
-            <div className="grid grid-cols-7">
-              <h5 className="col-span-1 text-center">Nombre</h5>
-              <h5 className="col-span-2 text-center">Tipo de valor</h5>
-              <h5 className="col-span-2 text-center">Valor por defecto</h5>
+            <div className="flex grid-cols-7 flex-col lg:grid">
+              <h5 className="col-span-1 hidden text-center lg:block">Nombre</h5>
+              <h5 className="col-span-2 hidden text-center lg:block">
+                Tipo de valor
+              </h5>
+              <h5 className="col-span-2 hidden text-center lg:block">
+                Valor por defecto
+              </h5>
               {createdParametersNames.map((parameterName) => (
                 <div key={parameterName} className="col-span-8">
                   <CreateParameterPrompt parameterName={parameterName} />
@@ -273,7 +277,7 @@ export const CreatePromptForm = () => {
               ))}
             </div>
             <Button
-              className="col-span-4 col-start-3"
+              className="w-full lg:col-span-4 lg:col-start-3"
               variant="contained"
               type="submit"
             >

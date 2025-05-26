@@ -16,20 +16,12 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="max-w-landingPage mx-auto flex h-[100dvh] flex-col">
-      <div className="text-text absolute top-0 right-10 py-8">
-        <UserButton
-          showName={true}
-          appearance={{
-            elements: {
-              userButtonBox: "text-text ",
-              userButtonOuterIdentifier: "!text-[16px]",
-            },
-          }}
-        />
+    <main className="lg:max-w-landingPage mx-auto flex h-[100dvh] flex-col">
+      <div className="text-text absolute top-0 right-2 py-8 lg:right-10">
+        <UserButton />
       </div>
-      <div className="flex flex-grow flex-col items-center justify-between xl:flex-row">
-        <div className="w-[35%]">
+      <div className="flex flex-grow flex-col items-center justify-around lg:flex-row lg:justify-between">
+        <div className="w-[75%] lg:w-[35%]">
           <Logo />
         </div>
         <div className="bg-primaryblack rounded-3xl p-16 text-center">
@@ -37,13 +29,13 @@ export default function Home() {
             PROMPTITO
           </h1>
           <h2 className="text-h2 font-weight-bold text-primarylight mb-2">
-            Papua nueva guinea
+            PLorem ipsum
           </h2>
           <p className="text-text mb-12">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             quos.
           </p>
-          <div className="flex justify-between gap-4">
+          <div className="flex flex-col justify-between gap-4 lg:flex-row">
             <SignedOut>
               <SignInButton>
                 <LoginButton

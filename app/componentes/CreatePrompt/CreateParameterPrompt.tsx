@@ -23,7 +23,7 @@ export const CreateParameterPrompt = ({
   const [tipoValor, setTipoValor] = useState("string");
 
   return (
-    <FormGroup className="text-text parameterForm my-8 !grid !grid-cols-7 items-center gap-12">
+    <FormGroup className="text-text parameterForm my-8 flex !grid-cols-7 flex-col items-center gap-8 lg:!grid lg:gap-12">
       <h4>{parameterName}</h4>
       <Select
         id={`tipoValor-${parameterNameWithoutSpaces}`}
@@ -46,7 +46,7 @@ export const CreateParameterPrompt = ({
         className="col-span-2 w-full"
       />
       {tipoValor == "listaOpciones" && (
-        <FormGroup className="col-span-2">
+        <FormGroup className="col-span-2 w-full">
           <TextField
             id={`opciones-${parameterNameWithoutSpaces}`}
             label="Opciones (separadas por comas)"
