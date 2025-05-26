@@ -1,13 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GenericButton } from "../General/GenericButton";
-import { Icon } from "../General/Icon";
 import type { PromptComponenteProps } from "~/interfaces";
-import { addFavourite } from "~/services/Promptito_API";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import { UserContext } from "~/contexts/UserContext";
 import { PromptUseMenu } from "./PromptUseMenu";
 import { IconButton } from "@mui/material";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { PromptFavouriteButton } from "./PromptFavouriteButton";
 import { PromptSelectVariant } from "./PromptSelectVariant";
 import CreateIcon from "@mui/icons-material/Create";
@@ -36,16 +32,16 @@ export const PromptComponente = ({
   );
   return (
     <>
-      <div className="promptComponente bg-background border-primarydark text-text my-6 grid grid-cols-8 items-center gap-2 rounded-2xl border-2 p-[2rem]">
+      <div className="promptComponente bg-background border-primarydark text-text animate__animated animate__fadeIn my-6 grid grid-cols-8 items-center gap-2 rounded-2xl border-2 p-[2rem]">
         <h3 className="col-span-5 overflow-hidden text-ellipsis">
           {prompt.titulo}
-          {prompt.usuarioCreador.idClerk == idClerkUsuarioActual && (
+          {/* {prompt.usuarioCreador.idClerk == idClerkUsuarioActual && (
             <NavLink to={"/crear/" + prompt.id} className={"ml-4"}>
               <IconButton color="primary">
                 <CreateIcon />
               </IconButton>
             </NavLink>
-          )}
+          )} */}
         </h3>
 
         <div className="creadoContainer col-span-3 flex justify-end gap-6">

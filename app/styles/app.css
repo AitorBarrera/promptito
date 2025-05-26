@@ -35,11 +35,10 @@
     rgba(2, 111, 98, 1) 100%
   );
 
-  --color-backgroundGradiant2: linear-gradient(
-    335deg,
-    rgba(1, 117, 98, 1) 0%,
-    rgba(87, 199, 133, 1) 50%,
-    rgba(237, 221, 83, 1) 100%
+  --color-backgroundGradiantHome: linear-gradient(
+    90deg,
+    rgba(2, 48, 43, 1) 0%,
+    rgba(3, 140, 124, 1) 100%
   );
 
   --color-logoShadow: rgba(0, 0, 0, 0.2);
@@ -64,7 +63,7 @@
   --leading-h3: 3rem;
 
   --container-standard: 90%;
-  --container-landingPage: 80%;
+  --container-landingPage: 100%;
 }
 
 html,
@@ -74,8 +73,13 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
-
+}
+main {
   background-image: var(--color-backgroundGradiant);
+}
+
+.homePage {
+  background-image: var(--color-backgroundGradiantHome);
 }
 
 .filterContainer {

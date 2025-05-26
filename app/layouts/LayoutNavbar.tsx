@@ -7,7 +7,7 @@ export const LayoutNavbar = () => {
 
   return (
     <div className="">
-      <div className="text-text border-bottom-2 bg-navbar relative mx-auto flex items-center justify-between gap-24 px-[6%] py-4">
+      <div className="text-text border-bottom-2 bg-primaryblack relative mx-auto flex items-center justify-between gap-24 px-[6%] py-4">
         <div className="flex flex-grow items-center justify-evenly gap-4">
           <NavLink
             to="/"

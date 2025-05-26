@@ -43,6 +43,10 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.cdnfonts.com/css/tron",
   },
+  {
+    rel: "stylesheet",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

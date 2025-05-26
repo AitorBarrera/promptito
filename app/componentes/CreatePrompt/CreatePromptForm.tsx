@@ -27,8 +27,10 @@ import { useForm } from "~/hooks";
 import { CreateParameterPrompt } from "./CreateParameterPrompt";
 import { UserContext } from "~/contexts/UserContext";
 import { PromptComponente } from "../Prompt/PromptComponente";
+import { useToast } from "~/hooks/useToast";
 
 export const CreatePromptForm = () => {
+  const { notify, ToastContainer } = useToast();
   const usuarioEnBBDD = useContext(UserContext);
 
   const [llms, setLlms] = useState<LLM[]>([]);
@@ -131,6 +133,7 @@ export const CreatePromptForm = () => {
     };
 
     addPromptConNavegacion(promptConNavegacion);
+    notify("Prompt creado correctamente", "success");
   };
 
   const [definedPrompt, setDefinedPrompt] = useState<boolean>(false);
@@ -239,7 +242,7 @@ export const CreatePromptForm = () => {
             de crear parametros y configuralos a tu interes.
           </small>
         </div>
-        <div className="flex flex-col gap-8 text-center lg:col-span-4">
+        <div className="col-span-4 flex flex-col gap-8 text-center lg:col-span-4 lg:flex-row">
           <Button
             variant="contained"
             color="primary"
@@ -300,6 +303,7 @@ export const CreatePromptForm = () => {
           </>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -40,6 +40,7 @@ export const useFetch = (url: string) => {
       hasError: false,
       error: null,
     });
+    console.log(data);
   };
 
   useEffect(() => {

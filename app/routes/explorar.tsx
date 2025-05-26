@@ -60,7 +60,7 @@ export default function Explorar() {
       `&idUsarioFavorito=${usuarioEnBBDD?.id ?? ""}` +
       `&esFavorito=${esFavorito}` +
       `&pagina=${actualPage}` +
-      `&cantidadPorPagina=${3}`,
+      `&cantidadPorPagina=${4}`,
   );
 
   const { datos, cantidadTotal, pagina, cantidadPorPagina, cantidadDePaginas } =
@@ -101,6 +101,11 @@ export default function Explorar() {
         <div className="max-w-standard relative mx-auto flex flex-col gap-4">
           {isLoading && <LoadingIndicator />}
           {hasError && <p>Error al cargar los prompts</p>}
+          {data && datos.length === 0 && (
+            <h2 className="!text-primaryblack animate__animated animate__pulse mt-8 text-center">
+              No hay prompts que cumplan con los filtros
+            </h2>
+          )}
           {data &&
             datos.map((prompt: Prompt) => (
               <PromptComponente

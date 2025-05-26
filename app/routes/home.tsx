@@ -16,7 +16,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="lg:max-w-landingPage mx-auto flex h-[100dvh] flex-col">
+    <main className="homePage mx-auto flex h-[100dvh] flex-col px-[6%]">
       <div className="text-text absolute top-0 right-2 py-8 lg:right-10">
         <UserButton />
       </div>
@@ -28,12 +28,11 @@ export default function Home() {
           <h1 className="text-h1 font-weight-bold text-text font-Tron mb-2">
             PROMPTITO
           </h1>
-          <h2 className="text-h2 font-weight-bold text-primarylight mb-2">
-            PLorem ipsum
-          </h2>
+          <h3 className="text-h2 font-weight-bold text-primarylight mb-2">
+            Repositorio de prompts para IA
+          </h3>
           <p className="text-text mb-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
+            Encuentra y comparte prompts para IA de manera fácil y rápida.
           </p>
           <div className="flex flex-col justify-between gap-4 lg:flex-row">
             <SignedOut>

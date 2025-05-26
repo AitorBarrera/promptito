@@ -5,18 +5,22 @@ import { ReplaceWithespace } from "~/services";
 import { getPromptVariantById } from "~/services/Promptito_API";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import { useToast } from "~/hooks/useToast";
+import { PromptParametersMenu } from "./PromptParametersMenu";
 
 export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
   const [promptVariantWithParameters, setPromptVariantWithParameters] =
     useState<PromptVariante | null>(null);
 
   const [generatedText, setGeneratedText] = useState(promptVariant.textoPrompt);
+  const { notify, ToastContainer } = useToast();
 
   const [showGeneratedText, setShowGeneratedText] = useState(false);
   const [showChatAI, setShowChatAI] = useState(false);
+
   useEffect(() => {
     const fetchPromptVariant = async () => {
-      const response = await getPromptVariantById(promptVariant.id);
+      const response = await getPromptVariantById(promptVariant.id || 0);
       return response;
     };
 
@@ -46,6 +50,7 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
   const testAi = () => {
     setShowChatAI(true);
     navigator.clipboard.writeText(generatedText);
+    notify("Prompt copiado al portapapeles", "success");
   };
 
   return (
@@ -65,7 +70,10 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
               <Button
                 variant="outlined"
                 startIcon={<ContentCopyIcon />}
-                onClick={() => navigator.clipboard.writeText(generatedText)}
+                onClick={() => {
+                  navigator.clipboard.writeText(generatedText);
+                  notify("Prompt copiado al portapapeles", "success");
+                }}
               >
                 Copiar Prompt
               </Button>
@@ -84,60 +92,11 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
           onSubmit={replacingParameters}
         >
           <h4 className="text-center">Parametros:</h4>
-          {promptVariantWithParameters?.parametros?.map((parametro) => {
-            const parameterNameWithoutSpaces = ReplaceWithespace(
-              parametro.nombre,
-            );
-            return (
-              <div key={parametro.id} className="flex flex-col gap-2">
-                <label
-                  htmlFor={parametro.nombre}
-                  className="text-sm font-semibold capitalize"
-                >
-                  {parametro.nombre}
-                </label>
-                {parametro.tipoValor === "string" && (
-                  <textarea
-                    id={parameterNameWithoutSpaces}
-                    name={parametro.nombre}
-                    required
-                    defaultValue={parametro.valorPredeterminado || ""}
-                    className="border-primarylight rounded-lg border p-2"
-                  />
-                )}
-                {parametro.tipoValor === "number" && (
-                  <input
-                    type="number"
-                    id={parameterNameWithoutSpaces}
-                    name={parametro.nombre}
-                    required
-                    defaultValue={parametro.valorPredeterminado || ""}
-                    className="border-primarylight rounded-lg border p-2"
-                  />
-                )}
-                {parametro.tipoValor === "listaOpciones" && (
-                  <select
-                    id={parameterNameWithoutSpaces}
-                    name={parametro.nombre}
-                    defaultValue={parametro.valorPredeterminado || ""}
-                    className="border-primarylight rounded-lg border p-2"
-                  >
-                    {parametro.opcionParametros?.map((opcion) => (
-                      <option
-                        key={opcion.id}
-                        value={opcion.valor}
-                        className="bg-primaryblack p-2"
-                      >
-                        {opcion.valor}
-                      </option>
-                    ))}
-                  </select>
-                )}
-              </div>
-            );
-          })}
+          <PromptParametersMenu
+            promptVariantWithParameters={promptVariantWithParameters}
+          />
           <Button type="submit" variant="contained">
-            Generar Prompt
+            Generar Prompt con parametros
           </Button>
         </form>
       </div>
@@ -160,6 +119,7 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
           <div id="pickaxe-inline-PromptitoAI_15JQ8"></div>
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 };

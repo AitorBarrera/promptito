@@ -62,3 +62,7 @@ export interface FilterFormTematicasProps {
 export interface CreateParameterPromptProps {
   parameterName: string;
 }
+
+export interface PromptParametersMenuProps {
+  promptVariantWithParameters: PromptVariante | null;
+}

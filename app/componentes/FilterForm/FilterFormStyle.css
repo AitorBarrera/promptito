@@ -14,9 +14,9 @@
 .form-group input,
 .form-group textarea,
 .form-group select {
-  color: var(--color-primaryblack);
-  background-color: white;
-  border: 1px solid var(--text-primary);
+  color: var(--color-text);
+  background-color: rgba(34, 34, 34, 0.212);
+  border: 1px solid var(--color-text);
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
@@ -39,6 +39,11 @@
   color: var(--color-text);
 }
 
+option {
+  background-color: black;
+  border: 1px solid var(--color-text);
+  margin: 20.5rem 0;
+}
 /* input[type="checkbox"] {
   appearance: none;
   width: 1rem;
