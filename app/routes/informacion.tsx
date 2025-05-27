@@ -12,9 +12,9 @@ export default function Informacion() {
     <>
       <LayoutNavbar />
       <main className="min-h-[100dvh] p-4">
-        <div className="lg:max-w-standard animate__fadeIn animate__animated bg-primaryblack flex flex-col gap-12 rounded-3xl p-8 pb-12 text-center lg:mx-auto">
-          <h1 className="my-8 text-center !text-4xl lg:!text-6xl">
-            Información
+        <div className="lg:max-w-standard animate__fadeIn animate__animated bg-primaryblack flex flex-col gap-12 rounded-3xl p-8 pb-12 text-center shadow-xl/30 lg:mx-auto">
+          <h1 className="font-Tron my-3 text-center !text-xl lg:!text-6xl">
+            Informacion
           </h1>
           <div>
             <h3>¿Qué es promptito?</h3>

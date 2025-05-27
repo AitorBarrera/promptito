@@ -74,10 +74,10 @@ export default function Explorar() {
       <LayoutNavbar />
       <main className="relative flex min-h-[100dvh] flex-col lg:flex-row">
         <div
-          className={`filterContainer text-text bg-primaryblack overflow-scroll overflow-x-hidden px-12 lg:sticky lg:top-0 lg:bottom-0 lg:max-h-[100dvh] lg:w-[25%] ${showFilters ? "block" : "hidden w-[0%] translate-x-[-500px]"}`}
+          className={`filterContainer text-text bg-primaryblack overflow-scroll overflow-x-hidden px-4 lg:sticky lg:top-0 lg:bottom-0 lg:max-h-[100dvh] lg:w-[25%] ${showFilters ? "block" : "hidden w-[0%] translate-x-[-500px]"}`}
         >
           <h3 className="text-primarywhite font-Tron my-4 text-center text-2xl font-bold">
-            PROMPTITO
+            FILTROS
           </h3>
           <FilterForm
             filterState={filterState as Filters}
@@ -99,7 +99,7 @@ export default function Explorar() {
             <TuneIcon />
           </button>
 
-          <div className="max-w-standard relative mx-auto flex flex-col gap-4">
+          <div className="lg:max-w-standard relative mx-auto flex flex-col gap-4 p-2 lg:gap-4">
             {isLoading && <LoadingIndicator />}
             {hasError && <p>Error al cargar los prompts</p>}
             {data && datos.length === 0 && (

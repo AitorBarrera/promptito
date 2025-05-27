@@ -6,7 +6,9 @@ import { Icon } from "~/componentes/General/Icon";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 export const LayoutNavbar = () => {
-  const [showNavbar, setShowNavbar] = useState(true);
+  const [showNavbar, setShowNavbar] = useState(() =>
+    window.innerWidth >= 1024 ? true : false,
+  );
 
   return (
     <div className="bg-primaryblack sticky top-0 z-1 w-full lg:static">

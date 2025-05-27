@@ -32,7 +32,7 @@ export const PromptComponente = ({
   );
   return (
     <>
-      <div className="promptComponente bg-background border-primarydark text-text animate__animated animate__fadeIn my-6 grid grid-cols-8 items-center gap-2 rounded-2xl border-4 p-[2rem] shadow-xl/30">
+      <div className="promptComponente bg-background border-primarydark text-text animate__animated animate__fadeIn grid grid-cols-8 items-center gap-2 rounded-2xl border-4 p-4 shadow-xl/30 lg:my-6 lg:p-8">
         <h3 className="col-span-8 overflow-hidden text-ellipsis lg:col-span-5">
           {prompt.titulo}
           {/* {prompt.usuarioCreador.idClerk == idClerkUsuarioActual && (
@@ -71,7 +71,7 @@ export const PromptComponente = ({
             {prompt.descripcion}
           </p>
         </div>
-        <div className="col-span-3 flex items-center text-end lg:justify-end">
+        <div className="col-span-8 row-start-2 flex items-center text-end lg:col-span-3 lg:row-start-auto lg:justify-end">
           <PromptFavouriteButton
             idCurrentUser={usuarioEnBBDD?.id}
             idPrompt={prompt.id}

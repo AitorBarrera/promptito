@@ -32,7 +32,12 @@ export const PromptFavouriteButton = ({
 
   return (
     <div className="flex items-center text-end">
-      <IconButton aria-label="star" color="primary" onClick={handleClickButton}>
+      <IconButton
+        aria-label="star"
+        color="primary"
+        onClick={handleClickButton}
+        sx={{ paddingLeft: 0 }}
+      >
         {inFavourites ? <StarIcon /> : <StarBorderIcon />}
       </IconButton>
       <span>{currentNumberFavourites}</span>
