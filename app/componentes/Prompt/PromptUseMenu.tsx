@@ -58,19 +58,21 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
   return (
     <div className="flex flex-col gap-2">
       <hr className="text-grey my-6 rounded-3xl border-1" />
-      <h4 className="my-8 text-center text-lg font-bold">
+      <h4 className="mb-8 text-center text-lg font-bold lg:my-8">
         {promptVariantWithParameters?.parametros?.length != 0
           ? "Modificar parametros"
           : `Prompt sin parametros`}
       </h4>
       <div className="flex grid-cols-5 flex-col-reverse gap-10 lg:grid lg:gap-20">
         <div
-          className={`${promptVariantWithParameters?.parametros?.length != 0 ? "col-span-3" : "col-span-5"} flex flex-col gap-8`}
+          className={`${promptVariantWithParameters?.parametros?.length != 0 ? "col-span-3" : "col-span-5"} flex flex-col gap-6 lg:gap-8`}
         >
           <h4 className="text-center">
-            {promptVariantWithParameters?.parametros?.length != 0
-              ? "Prompt modificado:"
-              : "Texto:"}
+            {promptVariantWithParameters?.parametros?.length == 0
+              ? "Texto:"
+              : !showGeneratedText
+                ? "Prompt sin modificar:"
+                : "Prompt modificado:"}
           </h4>
           <p className="bg-primarydark w-full flex-grow rounded-2xl p-8">
             {generatedText}
@@ -126,7 +128,6 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
               border: "2px solid rgba(0, 0, 0, 1)",
               transition: ".3s",
               borderRadius: "4px",
-              maxWidth: "700px",
             }}
           ></iframe>
           <div id="pickaxe-inline-PromptitoAI_15JQ8"></div>

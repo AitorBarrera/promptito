@@ -82,7 +82,7 @@ export const PromptComponente = ({
         </div>
 
         <div className="relative col-span-8 lg:px-8">
-          <p className="promptTexto text-light relative mx-auto mb-4 flex max-h-[100px] overflow-hidden text-justify">
+          <p className="promptTexto text-light relative mx-auto mb-4 flex max-h-[100px] overflow-hidden">
             {currentVariant.textoPrompt}
             <span
               className="from-background pointer-events-none absolute right-0 bottom-0 w-full bg-gradient-to-t to-transparent text-right"

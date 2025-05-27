@@ -67,7 +67,9 @@ export default function Explorar() {
   const { datos, cantidadTotal, pagina, cantidadPorPagina, cantidadDePaginas } =
     data == null ? {} : data;
 
-  const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(() =>
+    window.innerWidth >= 1024 ? true : false,
+  );
 
   return (
     <>

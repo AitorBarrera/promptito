@@ -13,7 +13,7 @@ export const LayoutNavbar = () => {
   return (
     <div className="bg-primaryblack sticky top-0 z-1 w-full lg:static">
       <div
-        className={`text-text relative mx-auto flex items-center justify-between gap-8 border-b-2 px-[4%] py-4 lg:flex-row lg:gap-24 lg:border-b-0 ${!showNavbar ? "flex-row-reverse" : "bg-primaryblack flex-col"}`}
+        className={`text-text relative mx-auto flex items-center justify-between gap-8 border-b-2 px-[4%] py-4 lg:flex-row lg:gap-24 lg:border-b-0 ${!showNavbar ? "h-14 flex-row-reverse" : "bg-primaryblack flex-col"}`}
       >
         {showNavbar && (
           <div className="flex flex-grow flex-col items-center justify-evenly gap-8 lg:flex-row">
@@ -87,7 +87,7 @@ export const LayoutNavbar = () => {
           value="check"
           selected={showNavbar}
           onChange={() => setShowNavbar((prevSelected) => !prevSelected)}
-          className={`!bg-primaryblack !text-text !border-text !rounded-full !border-2 lg:!hidden ${showNavbar ? "" : "rotate-180"}`}
+          className={`!bg-primaryblack !text-text !border-text !rounded-full !border-2 !p-1 lg:!hidden ${showNavbar ? "" : "rotate-180"}`}
         >
           <ArrowUpwardIcon />
         </ToggleButton>
