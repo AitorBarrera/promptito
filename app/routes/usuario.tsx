@@ -24,9 +24,18 @@ export default function Usuario() {
   return (
     <main className="flex min-h-[100dvh] flex-col">
       <LayoutNavbar />
-      <div className="flex flex-grow items-center justify-center p-4">
+      <div className="animate__fadeIn animate__animated flex flex-grow items-center justify-center p-4">
         <SignedOut>
-          <SignIn />
+          <SignIn
+          // appearance={{
+          //   variables: {
+          //     colorPrimary: "#022422",
+          //     colorText: "#022422",
+          //     colorTextSecondary: "#022422",
+          //     colorBackground: "#ffffff",
+          //   },
+          // }}
+          />
         </SignedOut>
         <SignedIn>
           <UserProfile />

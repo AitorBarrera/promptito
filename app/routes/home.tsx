@@ -25,12 +25,12 @@ export default function Home() {
           <Logo />
         </div>
         <div className="bg-primaryblack rounded-3xl p-8 text-center shadow-xl/30">
-          <p className="font-weight-bold font-Tron text-primary lg:text-h1 mb-8 text-2xl">
+          <p className="font-weight-bold font-Tron text-primary lg:text-h1 mb-4 text-2xl">
             PROMPTITO
           </p>
-          <b className="font-weight-bold text-primary lg:text-h3 text-lg">
-            Repositorio de prompts de LLMs
-          </b>
+          <p className="font-weight-bold text-primary lg:text-h3 mb-8 text-xl">
+            <b>Repositorio de prompts para LLMs</b>
+          </p>
           <p className="text-text mb-8">
             Encuentra y comparte prompts para IA de manera fácil y rápida.
           </p>

@@ -102,7 +102,9 @@ export default function Explorar() {
           </button>
 
           <div className="lg:max-w-standard relative mx-auto flex flex-col gap-4 p-2 lg:gap-4">
-            {isLoading && <LoadingIndicator />}
+            {isLoading && (
+              <LoadingIndicator text="Puede tardar hasta un minuto (Server API iniciando)" />
+            )}
             {hasError && <p>Error al cargar los prompts</p>}
             {data && datos.length === 0 && (
               <h2 className="!text-primaryblack animate__animated animate__pulse mt-8 text-center">
