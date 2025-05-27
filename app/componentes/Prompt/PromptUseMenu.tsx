@@ -21,7 +21,6 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
   useEffect(() => {
     const fetchPromptVariant = async () => {
       const response = await getPromptVariantById(promptVariant.id || 0);
-      console.log(response.parametros);
 
       return response;
     };

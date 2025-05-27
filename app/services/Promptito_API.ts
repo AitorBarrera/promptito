@@ -78,7 +78,6 @@ export const getPromptVariantById = async (promptVariantId: number) => {
 export const addPromptConNavegacion = async (
   nuevoPromptConNavegacion: PromptConNavegacion,
 ) => {
-  console.log(nuevoPromptConNavegacion);
   const response = await fetch(`${API_URL}Prompt/navegacion/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

@@ -64,7 +64,19 @@ export const CreatePromptForm = () => {
     const newParametersNames = newParameters.map((parameter) =>
       parameter[0].replace("{{Parametro: ", "").replace("}}", ""),
     );
-    setCreatedParametersNames(newParametersNames);
+    console.log("length", filterState.parametros.length);
+
+    if (newParametersNames.length === 0) {
+      console.log("no existen parametros");
+
+      notify(
+        "No hay parametros escritos correctamente para ser creados",
+        "error",
+      );
+      return;
+    } else {
+      setCreatedParametersNames(newParametersNames);
+    }
   };
 
   const handleSetParameters = (event: React.FormEvent<HTMLFormElement>) => {
@@ -132,8 +144,17 @@ export const CreatePromptForm = () => {
       tematicaIds: filterState.tematicas,
     };
 
-    addPromptConNavegacion(promptConNavegacion);
-    notify("Prompt creado correctamente", "success");
+    if (
+      promptConNavegacion.titulo === "" ||
+      promptConNavegacion.promptVariantes[0].nombre === "" ||
+      promptConNavegacion.promptVariantes[0].textoPrompt === ""
+    ) {
+      notify("Faltan datos por completar", "error");
+      return;
+    } else {
+      addPromptConNavegacion(promptConNavegacion);
+      notify("Prompt creado correctamente", "success");
+    }
   };
 
   const [definedPrompt, setDefinedPrompt] = useState<boolean>(false);
@@ -149,6 +170,7 @@ export const CreatePromptForm = () => {
             className="w-full"
             value={filterState.tituloPrompt}
             name="tituloPrompt"
+            required
             onChange={onInputChange}
           />
           <TextField
@@ -158,6 +180,7 @@ export const CreatePromptForm = () => {
             className="w-full"
             value={filterState.descripcionPrompt}
             name="descripcionPrompt"
+            required
             onChange={onInputChange}
             multiline={true}
             rows={4}
@@ -218,6 +241,7 @@ export const CreatePromptForm = () => {
             value={filterState.promptVarianteNombre}
             name="promptVarianteNombre"
             onChange={onInputChange}
+            required
           />
         </div>
 
@@ -232,6 +256,7 @@ export const CreatePromptForm = () => {
             value={filterState.promptVarianteTexto}
             name="promptVarianteTexto"
             onChange={onInputChange}
+            required
           />
           <small className="text-grey">
             Si deseas agregar parametros al prompt utiliza la sintaxis "
