@@ -64,7 +64,6 @@ export const CreatePromptForm = () => {
     const newParametersNames = newParameters.map((parameter) =>
       parameter[0].replace("{{Parametro: ", "").replace("}}", ""),
     );
-    console.log("length", filterState.parametros.length);
 
     if (newParametersNames.length === 0) {
       console.log("no existen parametros");
