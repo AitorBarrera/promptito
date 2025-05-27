@@ -11,7 +11,7 @@ export const LayoutNavbar = () => {
   return (
     <div className="bg-primaryblack sticky top-0 z-1 w-full lg:static">
       <div
-        className={`text-text border-bottom-2 border-primarydark relative mx-auto flex items-center justify-between gap-8 border-b-2 px-[4%] py-4 lg:flex-row lg:gap-24 lg:border-0${!showNavbar ? "flex-row-reverse" : "bg-primaryblack flex-col"}`}
+        className={`text-text relative mx-auto flex items-center justify-between gap-8 border-b-2 px-[4%] py-4 lg:flex-row lg:gap-24 lg:border-b-0 ${!showNavbar ? "flex-row-reverse" : "bg-primaryblack flex-col"}`}
       >
         {showNavbar && (
           <div className="flex flex-grow flex-col items-center justify-evenly gap-8 lg:flex-row">
