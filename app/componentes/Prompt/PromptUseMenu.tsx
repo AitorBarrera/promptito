@@ -21,6 +21,8 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
   useEffect(() => {
     const fetchPromptVariant = async () => {
       const response = await getPromptVariantById(promptVariant.id || 0);
+      console.log(response.parametros);
+
       return response;
     };
 
@@ -48,7 +50,7 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
   };
 
   const testAi = () => {
-    setShowChatAI(true);
+    setShowChatAI((prev) => !prev);
     navigator.clipboard.writeText(generatedText);
     notify("Prompt copiado al portapapeles", "success");
   };
@@ -57,15 +59,24 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
     <div className="flex flex-col gap-2">
       <hr className="text-grey my-6 rounded-3xl border-1" />
       <h4 className="my-8 text-center text-lg font-bold">
-        Modificar parametros
+        {promptVariantWithParameters?.parametros?.length != 0
+          ? "Modificar parametros"
+          : `Prompt sin parametros`}
       </h4>
-      <div className="grid grid-cols-5 gap-20">
-        <div className="col-span-3 flex flex-col gap-8">
-          <h4 className="text-center">Prompt modificado:</h4>
+      <div className="flex grid-cols-5 flex-col-reverse gap-10 lg:grid lg:gap-20">
+        <div
+          className={`${promptVariantWithParameters?.parametros?.length != 0 ? "col-span-3" : "col-span-5"} flex flex-col gap-8`}
+        >
+          <h4 className="text-center">
+            {promptVariantWithParameters?.parametros?.length != 0
+              ? "Prompt modificado:"
+              : "Texto:"}
+          </h4>
           <p className="bg-primarydark w-full flex-grow rounded-2xl p-8">
             {generatedText}
           </p>
-          {showGeneratedText && (
+          {(showGeneratedText ||
+            promptVariantWithParameters?.parametros?.length == 0) && (
             <div className="flex items-center justify-between gap-4">
               <Button
                 variant="outlined"
@@ -87,18 +98,20 @@ export const PromptUseMenu = ({ promptVariant }: PromptUseMenuProps) => {
             </div>
           )}
         </div>
-        <form
-          className="formParameters col-span-2 col-start-4 flex flex-col justify-between gap-8"
-          onSubmit={replacingParameters}
-        >
-          <h4 className="text-center">Parametros:</h4>
-          <PromptParametersMenu
-            promptVariantWithParameters={promptVariantWithParameters}
-          />
-          <Button type="submit" variant="contained">
-            Generar Prompt con parametros
-          </Button>
-        </form>
+        {promptVariantWithParameters?.parametros?.length != 0 && (
+          <form
+            className="formParameters col-span-2 col-start-4 flex flex-col justify-between gap-8"
+            onSubmit={replacingParameters}
+          >
+            <h4 className="text-center">Parametros:</h4>
+            <PromptParametersMenu
+              promptVariantWithParameters={promptVariantWithParameters}
+            />
+            <Button type="submit" variant="contained">
+              Generar Prompt con parametros
+            </Button>
+          </form>
+        )}
       </div>
       {showChatAI && (
         <div className="chatContainer my-8 flex justify-center">

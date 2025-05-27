@@ -66,3 +66,9 @@ export interface CreateParameterPromptProps {
 export interface PromptParametersMenuProps {
   promptVariantWithParameters: PromptVariante | null;
 }
+
+export interface PaginationPromptsProps {
+  cantidadDePaginas: number;
+  actualPage: number;
+  setActualPage: Dispatch<SetStateAction<number>>;
+}

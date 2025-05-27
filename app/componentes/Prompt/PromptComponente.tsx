@@ -32,8 +32,8 @@ export const PromptComponente = ({
   );
   return (
     <>
-      <div className="promptComponente bg-background border-primarydark text-text animate__animated animate__fadeIn my-6 grid grid-cols-8 items-center gap-2 rounded-2xl border-2 p-[2rem]">
-        <h3 className="col-span-5 overflow-hidden text-ellipsis">
+      <div className="promptComponente bg-background border-primarydark text-text animate__animated animate__fadeIn my-6 grid grid-cols-8 items-center gap-2 rounded-2xl border-4 p-[2rem] shadow-xl/30">
+        <h3 className="col-span-8 overflow-hidden text-ellipsis lg:col-span-5">
           {prompt.titulo}
           {/* {prompt.usuarioCreador.idClerk == idClerkUsuarioActual && (
             <NavLink to={"/crear/" + prompt.id} className={"ml-4"}>
@@ -44,14 +44,14 @@ export const PromptComponente = ({
           )} */}
         </h3>
 
-        <div className="creadoContainer col-span-3 flex justify-end gap-6">
+        <div className="creadoContainer col-span-8 flex gap-6 lg:col-span-3 lg:justify-end">
           <p className="flex items-center gap-2">
             <b className="text-primary">Creado en: </b>
-            <span>{prompt.fechaCreacion}</span>
+            <span>{new Date(prompt.fechaCreacion).toLocaleDateString()}</span>
           </p>
         </div>
 
-        <div className="temasContainer col-span-5">
+        <div className="temasContainer col-span-8 lg:col-span-5">
           <p className="">
             <b className="text-primary">Tematicas: </b>
             <span>
@@ -59,19 +59,19 @@ export const PromptComponente = ({
             </span>
           </p>
         </div>
-        <div className="autorContainer col-span-3 text-end">
+        <div className="autorContainer col-span-8 lg:col-span-3 lg:text-end">
           <p className="">
             <b className="text-primary">Autor: </b>
             <span>{prompt.usuarioCreador.nombre}</span>
           </p>
         </div>
 
-        <div className="descripcionContainer col-span-5">
+        <div className="descripcionContainer col-span-8 lg:col-span-5">
           <p className="text-light text-grey max-h-[67px] overflow-y-hidden text-ellipsis">
             {prompt.descripcion}
           </p>
         </div>
-        <div className="col-span-3 flex items-center justify-end text-end">
+        <div className="col-span-3 flex items-center text-end lg:justify-end">
           <PromptFavouriteButton
             idCurrentUser={usuarioEnBBDD?.id}
             idPrompt={prompt.id}
@@ -80,19 +80,30 @@ export const PromptComponente = ({
             setFavourites={setInFavourites}
           />
         </div>
-        {/* <div className="promptTextoSombra bg-linear-to-b from-transparent from-80% to-black z-10 absolute h-[100%] w-[100%] "> </div> */}
-        <p className="promptTexto text-light relative col-span-8 mx-auto my-4 max-h-[100px] overflow-hidden px-8 text-justify text-ellipsis">
-          {currentVariant.textoPrompt}
-        </p>
-        <div className="col-span-8 flex justify-between">
-          <div className="flex w-[20%] items-center rounded-2xl p-2">
+
+        <div className="relative col-span-8 lg:px-8">
+          <p className="promptTexto text-light relative mx-auto mb-4 flex max-h-[100px] overflow-hidden text-justify">
+            {currentVariant.textoPrompt}
+            <span
+              className="from-background pointer-events-none absolute right-0 bottom-0 w-full bg-gradient-to-t to-transparent text-right"
+              style={{
+                display:
+                  currentVariant.textoPrompt.length > 300 ? "block" : "none",
+                height: "2em",
+              }}
+            ></span>
+          </p>
+        </div>
+
+        <div className="col-span-8 flex flex-col justify-between gap-4 lg:flex-row">
+          <div className="flex items-center rounded-2xl lg:w-[20%] lg:p-2">
             <PromptSelectVariant
               currentVariant={currentVariant}
               promptVariantes={prompt.promptVariantes}
               handleChangeVariant={setCurrentVariant}
             />
           </div>
-          <div className="copyButtonContainer flex">
+          <div className="copyButtonContainer flex justify-center">
             <GenericButton
               key={2}
               text={"Usar prompt"}

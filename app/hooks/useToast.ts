@@ -11,7 +11,7 @@ export const useToast = () => {
     type: "success" | "error" | "warning" | "info",
   ) =>
     toast[type](text, {
-      position: "top-right",
+      position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,

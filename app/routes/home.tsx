@@ -16,32 +16,34 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="homePage mx-auto flex h-[100dvh] flex-col px-[6%]">
+    <main className="homePage animate__fadeIn animate__animated mx-auto flex min-h-[100dvh] flex-col">
       <div className="text-text absolute top-0 right-2 py-8 lg:right-10">
         <UserButton />
       </div>
-      <div className="flex flex-grow flex-col items-center justify-around lg:flex-row lg:justify-between">
-        <div className="w-[75%] lg:w-[35%]">
+      <div className="lg:max-w-standard flex flex-grow flex-col items-center justify-evenly p-2 lg:mx-auto lg:flex-row lg:justify-evenly">
+        <div className="my-8 w-[70%] lg:w-[35%]">
           <Logo />
         </div>
-        <div className="bg-primaryblack rounded-3xl p-16 text-center">
-          <h1 className="text-h1 font-weight-bold text-text font-Tron mb-2">
+        <div className="bg-primaryblack rounded-3xl p-8 text-center shadow-xl/30">
+          <p className="font-weight-bold font-Tron text-primary lg:text-h1 mb-8 text-2xl">
             PROMPTITO
-          </h1>
-          <h3 className="text-h2 font-weight-bold text-primarylight mb-2">
-            Repositorio de prompts para IA
-          </h3>
-          <p className="text-text mb-12">
+          </p>
+          <b className="font-weight-bold text-primary lg:text-h3 text-lg">
+            Repositorio de prompts de LLMs
+          </b>
+          <p className="text-text mb-8">
             Encuentra y comparte prompts para IA de manera fácil y rápida.
           </p>
-          <div className="flex flex-col justify-between gap-4 lg:flex-row">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row">
             <SignedOut>
               <SignInButton>
-                <LoginButton
-                  text="Iniciar Sesion"
-                  buttonVariant={1}
-                  iconName="user"
-                />
+                <div>
+                  <LoginButton
+                    text="Iniciar Sesion"
+                    buttonVariant={1}
+                    iconName="user"
+                  />
+                </div>
               </SignInButton>
             </SignedOut>
             <Link to="/explorar">

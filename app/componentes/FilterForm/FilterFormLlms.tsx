@@ -13,9 +13,12 @@ export const FilterFormLlms = ({ handleInputChange }: FilterFormLlmsProps) => {
     <div className="form-group flex flex-col gap-2">
       <label>LLM</label>
       {isLoading ? (
-        <LoadingIndicator />
+        <LoadingIndicator colorHEX="02b59f" />
       ) : (
-        <RadioGroup name="llms" className="llmsFilter">
+        <RadioGroup
+          name="llms"
+          className="llmsFilter grid-cols-2 gap-2 lg:!grid"
+        >
           <FormControlLabel
             key={0}
             control={

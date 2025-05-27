@@ -15,9 +15,12 @@ export const FilterFormTematicas = ({
     <div className="form-group">
       <label>Tematica</label>
       {isLoading ? (
-        <LoadingIndicator />
+        <LoadingIndicator colorHEX="02b59f" />
       ) : (
-        <RadioGroup name="tematicas" className="tematicasFilter">
+        <RadioGroup
+          name="tematicas"
+          className="tematicasFilter grid-cols-2 gap-2 lg:!grid"
+        >
           <FormControlLabel
             key={0}
             control={

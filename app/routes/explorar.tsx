@@ -8,9 +8,10 @@ import { FilterForm } from "~/componentes/FilterForm/FilterForm";
 import { useContext, useState } from "react";
 import TuneIcon from "@mui/icons-material/Tune";
 import { UserContext } from "~/contexts/UserContext";
-import { Button } from "@mui/material";
+import { Button, Pagination } from "@mui/material";
 import { OrbitProgress } from "react-loading-indicators";
 import { LoadingIndicator } from "~/componentes/General/LoadingIndicator";
+import { PaginationPrompts } from "~/componentes/Pagination/PaginationPrompts";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -69,70 +70,59 @@ export default function Explorar() {
   const [showFilters, setShowFilters] = useState(true);
 
   return (
-    <main className="relative flex min-h-[100dvh]">
-      <div
-        className={`filterContainer text-text bg-primaryblack sticky top-0 bottom-0 max-h-[100dvh] w-[25%] overflow-scroll overflow-x-hidden px-12 ${showFilters ? "block" : "hidden w-[0%] translate-x-[-500px]"}`}
-      >
-        <h3 className="text-primarywhite font-Tron my-4 text-center text-2xl font-bold">
-          PROMPTITO
-        </h3>
-        <FilterForm
-          filterState={filterState as Filters}
-          handleInputChange={onInputChange}
-          handleSelectChange={onSelectChange}
-        />
-      </div>
-      <div
-        className={
-          `relative flex flex-col pb-20` + showFilters
-            ? "w-[100%] pb-20"
-            : "w-[75%]"
-        }
-      >
-        <LayoutNavbar />
-
-        <button
-          className="bg-primaryblack sticky top-0 left-0 z-50 h-10 w-10 cursor-pointer rounded-br-md"
-          onClick={() => setShowFilters(!showFilters)}
+    <>
+      <LayoutNavbar />
+      <main className="relative flex min-h-[100dvh] flex-col lg:flex-row">
+        <div
+          className={`filterContainer text-text bg-primaryblack overflow-scroll overflow-x-hidden px-12 lg:sticky lg:top-0 lg:bottom-0 lg:max-h-[100dvh] lg:w-[25%] ${showFilters ? "block" : "hidden w-[0%] translate-x-[-500px]"}`}
         >
-          <TuneIcon />
-        </button>
+          <h3 className="text-primarywhite font-Tron my-4 text-center text-2xl font-bold">
+            PROMPTITO
+          </h3>
+          <FilterForm
+            filterState={filterState as Filters}
+            handleInputChange={onInputChange}
+            handleSelectChange={onSelectChange}
+          />
+        </div>
+        <div
+          className={
+            `relative flex flex-col` + showFilters
+              ? "relative w-[100%]"
+              : "w-[75%]"
+          }
+        >
+          <button
+            className="bg-primaryblack top-0 left-0 z-50 h-10 w-10 cursor-pointer rounded-br-md lg:sticky"
+            onClick={() => setShowFilters(!showFilters)}
+          >
+            <TuneIcon />
+          </button>
 
-        <div className="max-w-standard relative mx-auto flex flex-col gap-4">
-          {isLoading && <LoadingIndicator />}
-          {hasError && <p>Error al cargar los prompts</p>}
-          {data && datos.length === 0 && (
-            <h2 className="!text-primaryblack animate__animated animate__pulse mt-8 text-center">
-              No hay prompts que cumplan con los filtros
-            </h2>
-          )}
-          {data &&
-            datos.map((prompt: Prompt) => (
-              <PromptComponente
-                key={prompt.id}
-                prompt={prompt}
-                idClerkUsuarioActual={usuarioEnBBDD?.idClerk ?? ""}
-              />
-            ))}
+          <div className="max-w-standard relative mx-auto flex flex-col gap-4">
+            {isLoading && <LoadingIndicator />}
+            {hasError && <p>Error al cargar los prompts</p>}
+            {data && datos.length === 0 && (
+              <h2 className="!text-primaryblack animate__animated animate__pulse mt-8 text-center">
+                No hay prompts que cumplan con los filtros
+              </h2>
+            )}
+            {data &&
+              datos.map((prompt: Prompt) => (
+                <PromptComponente
+                  key={prompt.id}
+                  prompt={prompt}
+                  idClerkUsuarioActual={usuarioEnBBDD?.idClerk ?? ""}
+                />
+              ))}
+          </div>
+          <PaginationPrompts
+            cantidadDePaginas={cantidadDePaginas}
+            actualPage={actualPage}
+            setActualPage={setActualPage}
+          />
         </div>
-        <div className="absolute right-0 bottom-0 flex w-[500px] items-center justify-end gap-4 p-4">
-          {Array.from({ length: cantidadDePaginas }, (_, i) => (
-            <button
-              key={i}
-              className={`${
-                actualPage === i + 1
-                  ? "bg-primary text-primaryblack"
-                  : "bg-primaryblack text-primarywhite"
-              } h-10 w-10 cursor-pointer rounded-md`}
-              onClick={() => {
-                setActualPage(i + 1);
-              }}
-            >
-              {i + 1}
-            </button>
-          ))}
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

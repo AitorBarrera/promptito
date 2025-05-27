@@ -11,12 +11,14 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Crear() {
   return (
-    <main className="min-h-[100dvh]">
+    <>
       <LayoutNavbar />
-      <div className="xl:max-w-standard border-primaryblack bg-primaryblack mx-auto mt-6 flex flex-col gap-4 rounded-2xl border-2 p-6">
-        <h2 className="text-center">Crear Prompt</h2>
-        <CreatePromptForm />
-      </div>
-    </main>
+      <main className="min-h-[100dvh] p-4">
+        <div className="lg:max-w-standard border-primaryblack bg-primaryblack mx-auto flex flex-col gap-4 rounded-2xl border-2 p-6">
+          <h2 className="text-center">Crear Prompt</h2>
+          <CreatePromptForm />
+        </div>
+      </main>
+    </>
   );
 }

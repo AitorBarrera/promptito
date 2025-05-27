@@ -24,7 +24,7 @@ export default function Usuario() {
   return (
     <main className="flex min-h-[100dvh] flex-col">
       <LayoutNavbar />
-      <div className="flex flex-grow items-center justify-center">
+      <div className="flex flex-grow items-center justify-center p-4">
         <SignedOut>
           <SignIn />
         </SignedOut>

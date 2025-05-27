@@ -139,7 +139,7 @@ export const CreatePromptForm = () => {
   const [definedPrompt, setDefinedPrompt] = useState<boolean>(false);
 
   return (
-    <div className="createPromptForm">
+    <div className="createPromptForm animate__fadeIn animate__animated">
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-8 lg:p-16">
         <div className="col-span-4 flex flex-col gap-4">
           <TextField
