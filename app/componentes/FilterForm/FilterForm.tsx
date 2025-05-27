@@ -21,13 +21,13 @@ export const FilterForm = ({
           <select name="orderBy" id="orderBy" onChange={handleSelectChange}>
             <option value="fechaDesc">Fecha descendente</option>
             <option value="fechaAsc">Fecha ascendente</option>
-            <option value="tituloDesc">Titulo descendente</option>
-            <option value="tituloAsc">Titulo ascendente</option>
+            <option value="tituloDesc">Título descendente</option>
+            <option value="tituloAsc">Título ascendente</option>
           </select>
         </div>
 
         <div className="form-group">
-          <label htmlFor="tituloPrompt">Titulo del prompt:</label>
+          <label htmlFor="tituloPrompt">Título del prompt:</label>
           <input
             type="text"
             name="tituloPrompt"

@@ -53,7 +53,7 @@ export const PromptComponente = ({
 
         <div className="temasContainer col-span-8 lg:col-span-5">
           <p className="">
-            <b className="text-primary">Tematicas: </b>
+            <b className="text-primary">Temáticas: </b>
             <span>
               {prompt.tematicas.map((tematica) => tematica.nombre).join(", ")}
             </span>

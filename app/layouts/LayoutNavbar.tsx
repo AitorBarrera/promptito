@@ -54,7 +54,7 @@ export const LayoutNavbar = () => {
               }
             >
               <Icon iconName={"info"} margin_right={20} />
-              Saber mas
+              Saber más
             </NavLink>
           </div>
         )}
