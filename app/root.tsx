@@ -15,7 +15,6 @@ import { dark } from "@clerk/themes";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { colorThemeMaterial } from "./styles/colorThemeMaterial";
 import { UserProvider } from "./contexts/UserProvider";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -61,7 +60,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <SpeedInsights />
         <ScrollRestoration />
         <Scripts />
       </body>
