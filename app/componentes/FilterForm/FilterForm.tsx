@@ -19,6 +19,7 @@ export const FilterForm = ({
         <div className="form-group">
           <label htmlFor="orderBy">Ordenado por:</label>
           <select name="orderBy" id="orderBy" onChange={handleSelectChange}>
+            <option value="popularidad">Popularidad</option>
             <option value="fechaDesc">Fecha descendente</option>
             <option value="fechaAsc">Fecha ascendente</option>
             <option value="tituloDesc">Título descendente</option>
