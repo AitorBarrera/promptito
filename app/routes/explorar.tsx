@@ -76,7 +76,7 @@ export default function Explorar() {
       <LayoutNavbar />
       <main className="relative flex min-h-[100dvh] flex-col lg:flex-row">
         <div
-          className={`filterContainer text-text bg-primaryblack overflow-scroll overflow-x-hidden px-4 lg:sticky lg:top-0 lg:bottom-0 lg:max-h-[100dvh] lg:w-[25%] ${showFilters ? "block" : "hidden w-[0%] translate-x-[-500px]"}`}
+          className={`filterContainer border-primarylight text-text bg-primaryblack overflow-x-hidden border-b-2 px-4 lg:sticky lg:top-0 lg:bottom-0 lg:max-h-[100dvh] lg:w-[25%] lg:overflow-scroll lg:border-0 ${showFilters ? "block" : "hidden w-[0%] translate-x-[-500px]"}`}
         >
           <h3 className="text-primarywhite font-Tron my-4 text-center text-2xl font-bold">
             FILTROS

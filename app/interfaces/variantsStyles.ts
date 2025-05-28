@@ -2,7 +2,7 @@ export type buttonVariants = 1 | 2 | 3;
 
 export const buttonVariantsRecord: Record<buttonVariants, string> = {
   1: " text-primary hover:text-primaryblack hover:bg-primary hover:border-primaryblack",
-  2: " text-primary",
+  2: "text-primaryblack bg-primary border-primaryblack hover:bg-secundary",
   3: " text-primary",
 };
 

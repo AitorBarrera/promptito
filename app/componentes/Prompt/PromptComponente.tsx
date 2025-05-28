@@ -107,8 +107,8 @@ export const PromptComponente = ({
             <GenericButton
               key={2}
               text={"Usar prompt"}
-              buttonVariant={1}
-              iconName="copy"
+              buttonVariant={2}
+              iconName="eye"
               onClickHandler={() => setShowUseMenu(!showUseMenu)}
             />
           </div>
