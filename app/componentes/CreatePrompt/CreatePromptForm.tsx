@@ -28,8 +28,10 @@ import { CreateParameterPrompt } from "./CreateParameterPrompt";
 import { UserContext } from "~/contexts/UserContext";
 import { PromptComponente } from "../Prompt/PromptComponente";
 import { useToast } from "~/hooks/useToast";
+import { useNavigate } from "react-router";
 
 export const CreatePromptForm = () => {
+  const navigate = useNavigate();
   const { notify, ToastContainer } = useToast();
   const usuarioEnBBDD = useContext(UserContext);
 
@@ -47,7 +49,7 @@ export const CreatePromptForm = () => {
       descripcionPrompt: "",
       llms: [] as number[],
       tematicas: [] as number[],
-      promptVarianteNombre: "",
+      promptVarianteNombre: "1",
       promptVarianteTexto: "",
       parametros: [] as Parametro[],
     });
@@ -153,6 +155,7 @@ export const CreatePromptForm = () => {
     } else {
       addPromptConNavegacion(promptConNavegacion);
       notify("Prompt creado correctamente", "success");
+      navigate("/explorar");
     }
   };
 

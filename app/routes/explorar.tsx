@@ -4,7 +4,7 @@ import { LayoutNavbar } from "~/layouts/LayoutNavbar";
 import { useFetch, useForm } from "~/hooks";
 import type { Prompt, Filters } from "~/interfaces";
 import { FilterForm } from "~/componentes/FilterForm/FilterForm";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TuneIcon from "@mui/icons-material/Tune";
 import { UserContext } from "~/contexts/UserContext";
 import { LoadingIndicator } from "~/componentes/General/LoadingIndicator";
@@ -12,7 +12,7 @@ import { PaginationPrompts } from "~/componentes/Pagination/PaginationPrompts";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Promptito Explorar" },
+    { title: "Promptito - Explorar" },
     { name: "Explorar", content: "Explorar!" },
   ];
 }
@@ -21,7 +21,7 @@ const initialFilters: Filters = {
   tituloPrompt: "",
   nombreAutor: "",
   contenidoPrompt: "",
-  orderBy: "",
+  orderBy: "fechaDesc",
   idLlm: null,
   idPromptTematica: null,
   idUsuarioFavorito: null,
@@ -67,6 +67,19 @@ export default function Explorar() {
   const [showFilters, setShowFilters] = useState(() =>
     window.innerWidth >= 1024 ? true : false,
   );
+
+  useEffect(() => {
+    setActualPage(1);
+  }, [
+    tituloPrompt,
+    nombreAutor,
+    contenidoPrompt,
+    orderBy,
+    idLlm,
+    idPromptTematica,
+    idUsuarioFavorito,
+    esFavorito,
+  ]);
 
   return (
     <>

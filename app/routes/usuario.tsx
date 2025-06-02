@@ -4,7 +4,7 @@ import { SignedIn, SignedOut, SignIn, UserProfile } from "@clerk/clerk-react";
 import type { Usuario } from "~/interfaces";
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Promptito Usuario" },
+    { title: "Promptito - Usuario" },
     { name: "Usuario", content: "Usuario!" },
   ];
 }

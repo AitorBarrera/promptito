@@ -3,7 +3,7 @@ import type { Route } from "./+types/home";
 import { CreatePromptForm } from "~/componentes/CreatePrompt/CreatePromptForm";
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: "Promptito Crear" }, { name: "Crear", content: "Crear!" }];
+  return [{ title: "Promptito - Crear" }, { name: "Crear", content: "Crear!" }];
 }
 
 export default function Crear() {
