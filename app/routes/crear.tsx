@@ -10,7 +10,7 @@ export default function Crear() {
   return (
     <>
       <LayoutNavbar />
-      <main className="min-h-[100dvh] p-4">
+      <main className="min-h-[100dvh] pt-12">
         <div className="lg:max-w-standard border-primaryblack bg-primaryblack mx-auto flex flex-col gap-4 rounded-2xl border-2 p-8 shadow-xl/30">
           <h2 className="font-Tron text-center !text-xl lg:!text-6xl">
             Crear Prompt

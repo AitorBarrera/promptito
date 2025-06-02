@@ -58,7 +58,7 @@ export default function Explorar() {
       `&idUsarioFavorito=${usuarioEnBBDD?.id ?? ""}` +
       `&esFavorito=${esFavorito}` +
       `&pagina=${actualPage}` +
-      `&cantidadPorPagina=${4}`,
+      `&cantidadPorPagina=${1}`,
   );
 
   const { datos, cantidadTotal, pagina, cantidadPorPagina, cantidadDePaginas } =

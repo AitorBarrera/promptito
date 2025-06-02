@@ -17,7 +17,6 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
         setUsuarioEnBBDD(response);
 
         if (response == null) {
-          console.log("Usuario no existe en la BBDD");
           const username = user?.username;
           const imageUrl = user?.imageUrl;
           const email = user?.emailAddresses?.[0]?.emailAddress;

@@ -16,8 +16,6 @@ export const PromptSelectVariant = ({
   let index = 0;
 
   const onChangeSelect = (e: SelectChangeEvent) => {
-    console.log(e);
-
     handleChangeVariant(
       promptVariantes[(e.target.value as unknown as number) - 1],
     );

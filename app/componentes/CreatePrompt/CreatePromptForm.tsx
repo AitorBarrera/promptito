@@ -68,8 +68,6 @@ export const CreatePromptForm = () => {
     );
 
     if (newParametersNames.length === 0) {
-      console.log("no existen parametros");
-
       notify(
         "No hay parametros escritos correctamente para ser creados",
         "error",

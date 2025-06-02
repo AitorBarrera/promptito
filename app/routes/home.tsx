@@ -13,15 +13,15 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="homePage animate__fadeIn animate__animated mx-auto flex min-h-[100dvh] flex-col">
+    <main className="homePageMobile animate__fadeIn animate__animated mx-auto flex min-h-[100dvh] flex-col">
       <div className="text-text absolute top-0 right-2 py-8 lg:right-10">
         <UserButton />
       </div>
-      <div className="lg:max-w-standard flex flex-grow flex-col items-center justify-evenly p-2 lg:mx-auto lg:flex-row lg:justify-evenly">
+      <div className="lg:max-w-standard flex flex-grow flex-col items-center justify-evenly lg:mx-auto lg:flex-row lg:justify-evenly">
         <div className="my-8 w-[70%] lg:w-[35%]">
           <Logo />
         </div>
-        <div className="bg-primaryblack rounded-3xl p-8 text-center shadow-xl/30">
+        <div className="homePageMobileCard mr-3 rounded-r-3xl p-8 text-center lg:rounded-3xl lg:shadow-xl/30">
           <p className="font-weight-bold font-Tron text-primary lg:text-h1 mb-4 text-2xl">
             PROMPTITO
           </p>

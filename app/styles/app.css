@@ -27,18 +27,28 @@
     rgba(0, 0, 0, 1) 100%
   );
   --color-backgroundGradiant: linear-gradient(
-    181deg,
-    rgba(2, 111, 98, 1) 0%,
-    rgba(6, 158, 140, 1) 25%,
-    rgba(21, 176, 158, 1) 50%,
-    rgba(6, 158, 140, 1) 75%,
-    rgba(2, 111, 98, 1) 100%
+    180deg,
+    rgba(2, 36, 34, 1) 0%,
+    rgba(0, 115, 107, 1) 100%
   );
 
   --color-backgroundGradiantHome: linear-gradient(
     90deg,
     rgba(2, 48, 43, 1) 0%,
     rgba(3, 140, 124, 1) 100%
+  );
+
+  --color-backgroundGradiantHomeMobile: linear-gradient(
+    90deg,
+    rgba(2, 36, 34, 1) 0%,
+    rgba(0, 105, 92, 1) 77%,
+    rgba(2, 181, 159, 1) 100%
+  );
+
+  --color-backgroundGradiantHomeMobileCard: linear-gradient(
+    90deg,
+    rgba(2, 36, 34, 1) 0%,
+    rgba(3, 87, 81, 1) 100%
   );
 
   --color-logoShadow: rgba(0, 0, 0, 0.2);
@@ -80,6 +90,14 @@ main {
 
 .homePage {
   background-image: var(--color-backgroundGradiantHome);
+}
+
+.homePageMobile {
+  background-image: var(--color-backgroundGradiantHomeMobile);
+}
+
+.homePageMobileCard {
+  background-image: var(--color-backgroundGradiantHomeMobileCard);
 }
 
 .filterContainer {

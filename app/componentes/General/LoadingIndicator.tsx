@@ -10,12 +10,12 @@ export const LoadingIndicator = ({ colorHEX, text }: LoadingIndicatorProps) => {
     <div className="flex h-full flex-grow flex-col items-center justify-center">
       <OrbitProgress
         variant="split-disc"
-        color={`#${colorHEX || "022422"}`}
+        color={`#${colorHEX || "ffffff"}`}
         size="medium"
         text="CARGANDO"
         textColor=""
       />
-      <h4 className="!text-primaryblack !text-3xl !uppercase">{text}</h4>
+      <h4 className="!text-3xl !text-white !uppercase">{text}</h4>
     </div>
   );
 };

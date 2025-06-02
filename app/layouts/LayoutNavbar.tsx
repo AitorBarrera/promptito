@@ -13,10 +13,10 @@ export const LayoutNavbar = () => {
   return (
     <div className="bg-primaryblack sticky top-0 z-1 w-full lg:static">
       <div
-        className={`text-text relative mx-auto flex items-center justify-between gap-8 border-b-2 px-[8%] py-4 lg:flex-row lg:gap-24 lg:border-b-0 ${!showNavbar ? "h-14 flex-row-reverse" : "bg-primaryblack flex-col"}`}
+        className={`text-text relative mx-auto flex items-center justify-between gap-8 border-b-2 px-[4%] py-4 lg:flex-row lg:gap-24 lg:border-b-0 ${!showNavbar ? "h-14 flex-row-reverse" : "bg-primaryblack flex-col"}`}
       >
         {showNavbar && (
-          <div className="flex w-[80%] flex-col items-center justify-between gap-8 lg:flex-row">
+          <div className="flex flex-grow flex-col items-center justify-evenly gap-8 lg:flex-row">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -63,7 +63,7 @@ export const LayoutNavbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-primary border-primary sticky flex h-full items-center border-b-2 pb-2 lg:static lg:place-self-end"
-              : "sticky flex items-center pb-1 lg:static lg:place-self-end"
+              : "sticky flex items-center lg:static lg:place-self-end"
           }
         >
           <SignedOut>
