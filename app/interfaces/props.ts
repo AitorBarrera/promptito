@@ -1,7 +1,11 @@
 import type { ChangeEventHandler, Dispatch, SetStateAction } from "react";
-import type { Filters, Parametro, Prompt, PromptVariante } from "./objects";
-import type { buttonVariants, iconVariants } from "./variantsStyles";
-import type { StatsBase } from "fs";
+import type {
+  buttonVariants,
+  Filters,
+  iconVariants,
+  Prompt,
+  PromptVariante,
+} from "./";
 
 export interface GenericButtonProps {
   text: string;

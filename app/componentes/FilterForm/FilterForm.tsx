@@ -1,8 +1,8 @@
 import "./FilterFormStyle.css";
-import type { FilterFormProps, LLM } from "~/interfaces";
+import type { FilterFormProps } from "~/interfaces";
 import { FilterFormLlms } from "./FilterFormLlms";
 import { FilterFormTematicas } from "./FilterFormTematicas";
-import { FormControlLabel, FormGroup, FormLabel, Switch } from "@mui/material";
+import { FormControlLabel, Switch } from "@mui/material";
 import { SignedIn } from "@clerk/clerk-react";
 
 export const FilterForm = ({

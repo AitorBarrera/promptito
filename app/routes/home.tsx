@@ -8,10 +8,7 @@ import { SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { LoginButton } from "~/componentes/General/LoginButton";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Promptito Home" },
-    { name: "description", content: "Welcome!" },
-  ];
+  return [{ title: "Promptito" }, { name: "Home", content: "Presentacion" }];
 }
 
 export default function Home() {

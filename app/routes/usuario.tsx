@@ -1,22 +1,11 @@
 import { LayoutNavbar } from "~/layouts/LayoutNavbar";
 import type { Route } from "./+types/home";
-import {
-  SignedIn,
-  SignedOut,
-  SignIn,
-  SignUp,
-  UserProfile,
-  useSignUp,
-  useUser,
-} from "@clerk/clerk-react";
-import { useContext } from "react";
-import type { Usuario, UsuarioPost } from "~/interfaces";
-import { UserContext } from "~/contexts/UserContext";
-
+import { SignedIn, SignedOut, SignIn, UserProfile } from "@clerk/clerk-react";
+import type { Usuario } from "~/interfaces";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Promptito Usuario" },
-    { name: "description", content: "Usuario!" },
+    { name: "Usuario", content: "Usuario!" },
   ];
 }
 
@@ -27,14 +16,14 @@ export default function Usuario() {
       <div className="animate__fadeIn animate__animated flex flex-grow items-center justify-center p-4">
         <SignedOut>
           <SignIn
-          // appearance={{
-          //   variables: {
-          //     colorPrimary: "#022422",
-          //     colorText: "#022422",
-          //     colorTextSecondary: "#022422",
-          //     colorBackground: "#ffffff",
-          //   },
-          // }}
+            appearance={{
+              variables: {
+                colorPrimary: "#02b59f",
+                colorText: "#b7e2dd",
+                // colorTextSecondary: "#596d6b",
+                colorBackground: "#1a1d1d",
+              },
+            }}
           />
         </SignedOut>
         <SignedIn>

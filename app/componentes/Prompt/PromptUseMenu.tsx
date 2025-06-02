@@ -1,8 +1,7 @@
 import { Button } from "@mui/material";
-import React, { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import type { PromptUseMenuProps, PromptVariante } from "~/interfaces";
-import { ReplaceWithespace } from "~/services";
-import { getPromptVariantById } from "~/services/Promptito_API";
+import { getPromptVariantById } from "~/services";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useToast } from "~/hooks/useToast";

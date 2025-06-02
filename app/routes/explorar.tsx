@@ -1,4 +1,3 @@
-import { useFetcher } from "react-router";
 import type { Route } from "./+types/home";
 import { PromptComponente } from "~/componentes/Prompt/PromptComponente";
 import { LayoutNavbar } from "~/layouts/LayoutNavbar";
@@ -8,15 +7,13 @@ import { FilterForm } from "~/componentes/FilterForm/FilterForm";
 import { useContext, useState } from "react";
 import TuneIcon from "@mui/icons-material/Tune";
 import { UserContext } from "~/contexts/UserContext";
-import { Button, Pagination } from "@mui/material";
-import { OrbitProgress } from "react-loading-indicators";
 import { LoadingIndicator } from "~/componentes/General/LoadingIndicator";
 import { PaginationPrompts } from "~/componentes/Pagination/PaginationPrompts";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Promptito Explorar" },
-    { name: "description", content: "Explorar!" },
+    { name: "Explorar", content: "Explorar!" },
   ];
 }
 
