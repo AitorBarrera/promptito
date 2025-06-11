@@ -31,10 +31,14 @@ export const CreateParameterPrompt = ({
         className="col-span-2 w-full"
         value={tipoValor}
         name={`tipoValor-${parameterNameWithoutSpaces}`}
-        onChange={(e) => setTipoValor(e.target.value)}
+        onChange={(e) => {
+          console.log(e.target.value);
+
+          setTipoValor(e.target.value);
+        }}
       >
         <MenuItem value={"string"}>Texto</MenuItem>
-        <MenuItem value={"number"}>Numero</MenuItem>
+        {/* <MenuItem value={"number"}>Numero</MenuItem> */}
         <MenuItem value={"listaOpciones"}>Lista de opciones</MenuItem>
       </Select>
       <TextField
@@ -57,6 +61,11 @@ export const CreateParameterPrompt = ({
           />
         </FormGroup>
       )}
+      <button
+        onClick={() => {
+          console.log();
+        }}
+      ></button>
     </FormGroup>
   );
 };
