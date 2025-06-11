@@ -153,7 +153,6 @@ export const CreatePromptForm = () => {
     } else {
       addPromptConNavegacion(promptConNavegacion);
       notify("Prompt creado correctamente", "success");
-      navigate("/explorar");
     }
   };
 
