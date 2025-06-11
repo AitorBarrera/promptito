@@ -38,7 +38,7 @@ export const CreateParameterPrompt = ({
         }}
       >
         <MenuItem value={"string"}>Texto</MenuItem>
-        {/* <MenuItem value={"number"}>Numero</MenuItem> */}
+        <MenuItem value={"number"}>Numero</MenuItem>
         <MenuItem value={"listaOpciones"}>Lista de opciones</MenuItem>
       </Select>
       <TextField
