@@ -252,7 +252,7 @@ export const CreatePromptForm = () => {
             variant="outlined"
             className="w-full"
             multiline={true}
-            rows={4}
+            rows={10}
             value={filterState.promptVarianteTexto}
             name="promptVarianteTexto"
             onChange={onInputChange}
